@@ -19,4 +19,7 @@ order = [all_titles[title][0] for title in range(len(all_titles)) if title > 0]
 titlos.reverse()
 order.reverse()
 
-[print(f"{order[name].split('#')[1]} {titlos[name]}") for name in range(len(titlos))]
+movies = [f"{order[name].split('#')[1]} {titlos[name]}" for name in range(len(titlos))]
+print(movies)
+with open("movies.txt", "w") as f:
+    [f.write(line+"\n") for line in movies]
